@@ -1,0 +1,182 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f2;
+}
+
+/* Menu vertical */
+#menu-lateral {
+    width: 220px;
+    height: 100vh;
+    background-color: #285943;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto;
+}
+
+#menu-lateral h1 {
+    color: #f5d98b;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#menu-lateral ul {
+    list-style: none;
+}
+
+#menu-lateral li {
+    margin-bottom: 10px;
+}
+
+#menu-lateral a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 8px;
+}
+
+#menu-lateral a:hover {
+    color: #f5d98b;
+    background-color: #173d30;
+}
+
+/* Contenido principal */
+main {
+    margin-left: 220px;
+}
+
+/* Menu horizontal */
+nav {
+    background-color: #285943;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #f5d98b;
+}
+
+/* Secciones */
+section {
+    min-height: 100vh;
+    padding: 40px;
+    text-align: center;
+    scroll-margin-top: 60px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #285943;
+}
+
+h3 {
+    margin-top: 20px;
+    color: #285943;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Imagenes */
+.imagen {
+    width: 300px;
+    height: 200px;
+    border: 2px dashed #999;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #666;
+}
+
+.imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Colores de cada seccion */
+#bienvenido {
+    background-color: #f4f4f4;
+}
+
+#lugares {
+    background-color: #e5efdf;
+}
+
+#tradiciones {
+    background-color: #fff0d9;
+}
+
+#vestimenta {
+    background-color: #f0e6d2;
+}
+
+/* Adaptacion para celulares */
+@media (max-width: 700px) {
+    #menu-lateral {
+        width: 150px;
+        padding: 10px;
+    }
+
+    #menu-lateral h1 {
+        font-size: 20px;
+    }
+
+    #menu-lateral a {
+        font-size: 11px;
+        padding: 10px 5px;
+    }
+
+    main {
+        margin-left: 150px;
+    }
+
+    nav {
+        padding: 10px 5px;
+    }
+
+    nav ul {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 11px;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+
+    .imagen {
+        max-width: 100%;
+        height: 150px;
+    }
+}

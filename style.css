@@ -1,0 +1,132 @@
+/* ESTILOS GENERALES */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9f5;
+    color: #3c3c3c;
+}
+
+/* SECCIÓN PRINCIPAL */
+.vh-100 {
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+
+/* CONTENEDOR */
+.container-fluid {
+    padding: 30px;
+}
+
+.row {
+    align-items: center;
+}
+
+/* FORMULARIO */
+form {
+    width: 100%;
+}
+
+form[style] {
+    max-width: 420px;
+    background-color: white;
+    padding: 40px;
+    border-radius: 22px;
+    border: 2px solid #e5eedf;
+    box-shadow: 0 7px 0 #dce8d5;
+}
+
+/* TÍTULO */
+h3 {
+    color: #58a832;
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* ETIQUETAS */
+.form-label {
+    color: #4b4b4b;
+    font-weight: bold;
+}
+
+/* CAMPOS DE TEXTO */
+.form-control {
+    border: 2px solid #e2e8df;
+    border-radius: 12px;
+    padding: 13px;
+    background-color: #f8faf7;
+    transition: 0.3s;
+}
+
+.form-control:focus {
+    border-color: #58cc02;
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(88, 204, 2, 0.15);
+}
+
+/* BOTONES */
+.btn-info,
+.btn-primary {
+    background-color: #58cc02;
+    border: none;
+    border-radius: 13px;
+    color: white;
+    font-weight: bold;
+    padding: 12px;
+    box-shadow: 0 4px 0 #46a302;
+    transition: 0.2s;
+}
+
+.btn-info {
+    width: 100%;
+}
+
+.btn-info:hover,
+.btn-primary:hover {
+    background-color: #46b900;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 0 #388c02;
+}
+
+/* ENLACES */
+a {
+    color: #58a832;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #388c02;
+    text-decoration: underline;
+}
+
+/* IMAGEN */
+.col-sm-6.px-0 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px !important;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.col-sm-6 img {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 650px;
+    max-height: 650px;
+    object-fit: contain !important;
+    object-position: center center !important;
+    margin: auto;
+    border-radius: 20px;
+}
+
+/* CELULARES */
+@media (max-width: 767px) {
+    .col-sm-6.px-0 {
+        display: none !important;
+    }
+}

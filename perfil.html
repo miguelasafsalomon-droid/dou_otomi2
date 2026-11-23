@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mi perfil | Learning</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: white;
+            color: #3c3c3c;
+            padding: 30px;
+        }
+
+        .contenedor-principal {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        /* BARRA SUPERIOR */
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+            color: #58cc02;
+        }
+
+        .boton-inicio {
+            text-decoration: none;
+            color: white;
+            background: #58cc02;
+            padding: 12px 18px;
+            border-radius: 12px;
+            font-weight: bold;
+            box-shadow: 0 4px #46a302;
+        }
+
+        .boton-inicio:hover {
+            background: #46a302;
+        }
+
+        /* PERFIL */
+
+        #contenedor {
+            width: 100%;
+        }
+
+        .card {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 12px;
+            position: relative;
+            padding-top: 260px;
+            width: 100%;
+            background: white;
+        }
+
+        /* PORTADA ROSA */
+
+        .card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 210px;
+            background: #ffcef1;
+            border-radius: 18px;
+        }
+
+        /* AVATAR */
+
+        .card::after {
+            content: "🦉";
+            position: absolute;
+            top: 65px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 135px;
+            height: 135px;
+            background: #fff;
+            border: 5px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 85px;
+        }
+
+        /* NOMBRE */
+
+        .card h2 {
+            grid-column: 1 / -1;
+            font-size: 26px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            overflow-wrap: anywhere;
+        }
+
+        /* INFORMACION PERSONAL */
+
+        .card p {
+            font-size: 15px;
+            color: #777;
+            margin-bottom: 5px;
+            overflow-wrap: anywhere;
+        }
+
+        .card p:nth-of-type(1),
+        .card p:nth-of-type(2) {
+            grid-column: 1 / -1;
+        }
+
+        /* NIVEL */
+
+        .card p:nth-of-type(3) {
+            grid-column: 1 / -1;
+            display: inline-block;
+            width: fit-content;
+            background: #fff4cc;
+            color: #d69e00;
+            padding: 9px 14px;
+            border-radius: 10px;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        /* SEPARADOR */
+
+        .card hr {
+            grid-column: 1 / -1;
+            border: none;
+            border-top: 2px solid #eeeeee;
+            margin: 20px 0;
+        }
+
+        /* ESTADISTICAS */
+
+        .card h3 {
+            grid-column: 1 / -1;
+            font-size: 23px;
+            margin-bottom: 5px;
+        }
+
+        .card p:nth-of-type(4),
+        .card p:nth-of-type(5),
+        .card p:nth-of-type(6),
+        .card p:nth-of-type(7) {
+            min-height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 17px;
+            padding: 15px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #555;
+            margin: 0;
+            transition: 0.2s;
+        }
+
+        .card p:nth-of-type(4):hover,
+        .card p:nth-of-type(5):hover,
+        .card p:nth-of-type(6):hover,
+        .card p:nth-of-type(7):hover {
+            border-color: #58cc02;
+            transform: translateY(-3px);
+        }
+
+        /* ICONOS DE ESTADISTICAS */
+
+        .card p:nth-of-type(4)::before {
+            content: "🎯";
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .card p:nth-of-type(5)::before {
+            content: "⚡";
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .card p:nth-of-type(6)::before {
+            content: "🔥";
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .card p:nth-of-type(7)::before {
+            content: "🏆";
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        /* FECHA */
+
+        .card p:nth-of-type(8) {
+            grid-column: 1 / -1;
+            margin-top: 15px;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 550px) {
+
+            body {
+                padding: 18px;
+            }
+
+            .card {
+                padding-top: 245px;
+                gap: 10px;
+            }
+
+            .card::before {
+                height: 195px;
+            }
+
+            .card::after {
+                top: 55px;
+                width: 125px;
+                height: 125px;
+                font-size: 75px;
+            }
+
+            .card h2 {
+                font-size: 22px;
+            }
+
+            .card h3 {
+                font-size: 21px;
+            }
+
+            .card p:nth-of-type(4),
+            .card p:nth-of-type(5),
+            .card p:nth-of-type(6),
+            .card p:nth-of-type(7) {
+                min-height: 95px;
+                padding: 10px 5px;
+                font-size: 14px;
+            }
+
+            .logo {
+                font-size: 21px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="contenedor-principal">
+
+        <!-- BARRA SUPERIOR -->
+
+        <nav class="navbar">
+
+            <div class="logo">
+                🦉 Learning
+            </div>
+
+            <a href="index.html" class="boton-inicio">
+                🏠 Inicio
+            </a>
+
+        </nav>
+
+
+        <!-- PERFIL DEL USUARIO -->
+
+        <section id="contenedor">
+
+            <p>Cargando perfil...</p>
+
+        </section>
+
+    </main>
+
+
+    <!-- JAVASCRIPT EXTERNO -->
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>

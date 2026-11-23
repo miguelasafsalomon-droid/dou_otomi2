@@ -1,0 +1,259 @@
+
+/* CONFIGURACIÓN GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #f7f8fc;
+    color: #303545;
+}
+
+/* BARRA SUPERIOR */
+.barra_superior {
+    width: 100%;
+    height: 85px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    border-bottom: 1px solid #eeeeee;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.contenedor_progreso {
+    width: 65%;
+    max-width: 650px;
+}
+
+.avance_progreso {
+    width: 100%;
+    height: 15px;
+    background: #e9ebef;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.relleno_progreso {
+    width: 20%;
+    height: 100%;
+    background: #58cc02;
+    border-radius: 20px;
+    transition: width 0.4s ease;
+}
+
+.caja_vidas {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.icono_corazon {
+    font-size: 23px;
+}
+
+.caja_puntaje {
+    margin-left: 18px;
+    color: #e5a000;
+}
+
+/* SECCIONES */
+section {
+    display: none;
+    min-height: calc(100vh - 85px);
+    padding: 55px 20px;
+    text-align: center;
+}
+
+#leccion1 {
+    display: block;
+    background: #f7f8fc !important;
+}
+
+/* TÍTULOS */
+section h3 {
+    color: #8b5cf6;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+    font-weight: bold;
+}
+
+section h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #303545;
+    margin-bottom: 45px;
+}
+
+/* TARJETAS */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.card {
+    width: 210px;
+    height: 210px;
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 0 #e5e7eb;
+    transition: all 0.2s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.card h3 {
+    color: #303545;
+    font-size: 23px;
+    letter-spacing: 0;
+    text-transform: none;
+    margin: 0;
+}
+
+/* EFECTO HOVER */
+.card:hover {
+    border-color: #a78bfa;
+    transform: translateY(-5px);
+    box-shadow: 0 9px 0 #e5e7eb;
+}
+
+/* TARJETA SELECCIONADA */
+.card.seleccionada {
+    background: #f3eaff;
+    border: 3px solid #8b5cf6;
+    box-shadow: 0 5px 0 #8b5cf6;
+    transform: translateY(-3px);
+}
+
+/* BOTONES */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 55px;
+}
+
+button {
+    min-width: 190px;
+    padding: 17px 30px;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* COMPROBAR */
+.comprobar {
+    background: #58cc02;
+    color: white;
+    box-shadow: 0 5px 0 #46a302;
+}
+
+.comprobar:hover {
+    background: #61dc05;
+    transform: translateY(-2px);
+    box-shadow: 0 7px 0 #46a302;
+}
+
+.comprobar:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0 #46a302;
+}
+
+/* SALTAR */
+.saltar {
+    background: white;
+    color: #777d8b;
+    border: 2px solid #e5e7eb;
+    box-shadow: 0 4px 0 #e5e7eb;
+}
+
+.saltar:hover {
+    background: #f1f2f5;
+    transform: translateY(-2px);
+}
+
+/* RESULTADOS */
+.resultado {
+    margin-top: 30px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+
+    .barra_superior {
+        height: 75px;
+        padding: 0 15px;
+    }
+
+    .contenedor_progreso {
+        width: 50%;
+    }
+
+    .caja_vidas {
+        font-size: 15px;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    section h1 {
+        font-size: 25px;
+        margin-bottom: 30px;
+    }
+
+    .container {
+        gap: 15px;
+    }
+
+    .card {
+        width: 145px;
+        height: 155px;
+        padding: 12px;
+    }
+
+    .card img {
+        height: 115px;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 35px;
+    }
+
+    button {
+        width: 90%;
+    }
+}
